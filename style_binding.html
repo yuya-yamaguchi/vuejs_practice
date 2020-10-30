@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="vue.js"></script>
+  <div id="app">
+    <h1 :style="{color: textColor, 'background-color': bgColor}">{{message}}</h1>
+    <h2 :style="[styleObj, baseObj]">{{message2}}</h2>
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        message: "Hello World",
+        message2: "こんにちは世界",
+        textColor: "green",
+        bgColor: "red",
+        styleObj: {
+          color: "blue",
+          'background-color': "black"
+        },
+        baseObj: {
+          fontSize: "100px"
+        }
+      }
+    })
+  </script>
+</body>
+</html>

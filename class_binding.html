@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="vue.js"></script>
+  <div id="app">
+    <p :class="classOj">{{message}}</p>
+    <p :class="[{back: isActive}, strings_h]">{{message}}</p>
+    <button @click="changeColor()">色を変える</button>
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        message: "Hello World",
+        isActive: true,
+        back_h: 'back',
+        strings_h: 'strings'
+      },
+      computed: {
+        classOj: function(){
+          return {
+            back: this.isActive,
+            strings: this.isActive
+          }
+        }
+      },
+      methods: {
+        changeColor: function(){
+          this.isActive = !this.isActive
+        }
+      }
+    })
+  </script>
+  <style lang="scss">
+    .back{
+      background-color: #333333;
+    }
+    .strings{
+      color: red;
+    }
+  </style>
+</body>
+</html>
