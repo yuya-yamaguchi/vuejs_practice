@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="vue.js"></script>
+  <div id="app1">
+    <p>{{ message }}</p>
+  </div>
+  <div id="app2">
+  </div>
+  <script>
+    var vm1 = new Vue({
+      data: {
+        message: "こんにちは"
+      }
+    })
+    vm1.$mount("#app1")
+    var vm2 = new Vue({
+      data: {
+        name: "Hello"
+      },
+      template: "<h1>{{ name }}</h1>"
+    }).$mount("#app2")
+  </script>
+  <style lang="scss">
+  </style>
+</body>
+</html>
