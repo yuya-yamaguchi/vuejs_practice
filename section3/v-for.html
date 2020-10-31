@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="vue.js"></script>
+  <div id="app">
+    <ul>
+      <li v-for="value in fruits">
+        {{ value }}
+      </li>
+      <li v-for="(value, i) in fruits">
+        ({{ i }}){{ value }}
+      </li>
+    </ul>
+    <ul>
+      <li v-for="(value, key, i) in object">{{ key }} {{ value }}</li>
+    </ul>
+    <template v-for="fruit in fruits">
+      <li>{{ fruit }}</li>
+    </template>
+    <span v-for="n in 10"> {{ n }} </span>
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        fruits: ["りんご", "ばなな", "ぶどう"],
+        object: {
+          name: "太郎",
+          age:  21
+        }
+      }
+    })
+  </script>
+  <style lang="scss">
+  </style>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="vue.js"></script>
+  <div id="app">
+    <p v-show="ok">OK!</p>
+    <p v-show="!ok">OK!</p>
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        ok: true
+      }
+    })
+  </script>
+  <style lang="scss">
+  </style>
+</body>
+</html>
