@@ -1,20 +1,37 @@
 <template>
   <div>
-    <p>いいね {{ number }}</p>
+    <p>いいね数 {{ halfNumber }}</p>
+    <p>名前 {{ testProp }}</p>
     <button @click="increment()">+1</button>
   </div>
 </template>
 
 <script>
 export default{
-  data: function() {
+  props: {
+    totalNumberProp: {
+      type: Number,
+      default: 2
+    },
+    testProp: {
+      type: String,
+      default: "佐藤"
+    }
+  },
+  data() {
     return {
-      number: 4
+      totalNumber: this.totalNumberProp
+    }
+  },
+  computed: {
+    halfNumber() {
+      return this.totalNumber;
     }
   },
   methods: {
     increment: function(){
-      this.number += 1;
+      this.totalNumber += 1
+      this.$emit("my-click", this.totalNumber + 1);
     }
   }
 }

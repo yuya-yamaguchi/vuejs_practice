@@ -1,5 +1,5 @@
 <template>
-  <div>いいね！</div>
+  <div>トータルのいいね数</div>
 </template>
 
 <style scoped>
