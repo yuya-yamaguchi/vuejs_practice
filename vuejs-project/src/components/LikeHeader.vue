@@ -1,6 +1,27 @@
 <template>
-  <div>トータルのいいね数</div>
+  <div>
+    <p>{{ headerText }}</p>
+    <slot></slot>
+  </div>
 </template>
+
+<script>
+export default {
+  props: ["headerText"],
+  data(){
+    return{
+      slotProps:{
+        firstName: "花子",
+        lastName: "テスト"
+      },
+      slotProps2:{
+        test1: "テスト1",
+        test2: "テスト2"
+      }
+    }
+  }
+}
+</script>
 
 <style scoped>
 div {
