@@ -4,13 +4,22 @@ import About from '../views/About.vue'
 import Users from '../views/Users.vue'
 import UsersPosts from '../views/UsersPosts.vue'
 import UsersProfile from '../views/UsersProfile.vue'
+import HeaderHome from '../views/HeaderHome.vue'
+import HeaderUsers from '../views/HeaderUsers.vue'
 
 const routes = [
-  { path: '/',      name: 'Home',  component: Home },
+  { path: '/', 
+    components: {
+      default: Home,
+      header: HeaderHome
+    }
+  },
   { path: '/about', name: 'About', component: About },
   { path: '/users/:id',
-    name: 'User',
-    component: Users,
+    components: {
+      default: Users,
+      header: HeaderUsers
+    },
     props: true,
     children: [
       { path: "posts", component: UsersPosts, name: "users-id-posts" },
