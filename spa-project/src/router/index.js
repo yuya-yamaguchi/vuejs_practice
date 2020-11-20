@@ -20,11 +20,18 @@ const routes = [
       default: Users,
       header: HeaderUsers
     },
-    props: true,
+    props: {
+      default: true,
+      header:  false
+    },
     children: [
       { path: "posts", component: UsersPosts, name: "users-id-posts" },
       { path: "profile", component: UsersProfile, name: "users-id-profile" }
     ]
+  },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "/"
   }
 ]
 
